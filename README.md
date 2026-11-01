@@ -132,27 +132,3 @@ We implemented and compared 7 distinct strategy ideas alongside the Equal-Weight
 5. **Anti-Cash Compliance**: Exposure never drops below 35% on average (Rule requires $\ge 30\%$).
 
 ---
-
-## 6. Presentation Slide Outline (3–5 Slides)
-
-### Slide 1: Executive Overview & One-Sentence Pitch
-- **One Sentence**: *"AlphaForge combines a 65% risk-parity core with an adaptive RidgeCV cross-sectional alpha tilt, volatility targeting, and drift-aware deadband rebalancing to capture market growth while curbing drawdown and eliminating fee drag."*
-- Key Highlight: Out-of-sample Sharpe of **1.90**, Calmar of **2.09**, and only **1.39%** transaction cost paid over 4.5 years of validation.
-
-### Slide 2: Exploration & Strategy Comparison (`comparison.csv`)
-- Table showing the 7 strategies tested: Why naive momentum and pure mean-reversion bled 45–75% in transaction fees.
-- How the Core-Satellite hybrid achieved the best balance of return, Sharpe, and cost efficiency.
-
-### Slide 3: Training Window Selection (`windows.csv`)
-- Analysis of the 6 windows: why Window `(1188, 3707)` was chosen.
-- Justification: Regime recency (directly precedes the secret evaluation days) and superior out-of-sample generalization (+1.12).
-
-### Slide 4: Risk Management & Capital Preservation
-- Volatility Targeting (13% target)
-- 50-day synthetic market trend regime filter
-- Multi-tier drawdown circuit breaker (-8%, -12%, -20%)
-- Single-stock position cap at 30% to prevent idiosyncratic disasters
-
-### Slide 5: Key Learnings & Future Roadmap
-- *Key Takeaway*: In daily trading competitions with 10 bps friction, **turnover control matters more than raw alpha**.
-- *With More Time*: Explore hierarchical risk parity (HRP), cross-asset volume-synchronized probability of toxicity (VPIN), and dynamic regime-switching Markov models.
